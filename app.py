@@ -35,10 +35,8 @@ st.markdown("""
     .metric-card p  { font-size: 1.8rem; font-weight: 700; color: #1a1a2e; margin: 0.3rem 0 0 0; }
     .result-box-dropout  { background:#ffeaea; border:2px solid #E74C3C; border-radius:12px; padding:1.5rem; text-align:center; }
     .result-box-graduate { background:#eafff2; border:2px solid #2ECC71; border-radius:12px; padding:1.5rem; text-align:center; }
-    .result-box-enrolled { background:#eaf4ff; border:2px solid #3498DB; border-radius:12px; padding:1.5rem; text-align:center; }
     .result-box-dropout h2  { color:#E74C3C; }
     .result-box-graduate h2 { color:#2ECC71; }
-    .result-box-enrolled h2 { color:#3498DB; }
     .stButton>button {
         background: linear-gradient(135deg, #0f3460, #533483);
         color: white; border: none; border-radius: 8px;
@@ -250,9 +248,8 @@ with tabs[1]:
             pred_label = le.inverse_transform([pred])[0]
 
             st.divider()
-            box_class = {"Dropout": "result-box-dropout", "Graduate": "result-box-graduate",
-                         "Enrolled": "result-box-enrolled"}.get(pred_label, "result-box-enrolled")
-            emoji = {"Dropout": "🔴", "Graduate": "🟢", "Enrolled": "🔵"}.get(pred_label, "")
+            box_class = {"Dropout": "result-box-dropout", "Graduate": "result-box-graduate"}.get(pred_label, "result-box-graduate")
+            emoji = {"Dropout": "🔴", "Graduate": "🟢"}.get(pred_label, "")
 
             st.markdown(f"""
             <div class="{box_class}">
@@ -278,10 +275,8 @@ with tabs[1]:
 
             if pred_label == "Dropout":
                 st.error("⚠️ **Rekomendasi:** Mahasiswa ini berisiko dropout. Segera hubungi konselor akademik dan pertimbangkan program intervensi dini.")
-            elif pred_label == "Graduate":
-                st.success("✅ **Rekomendasi:** Mahasiswa ini memiliki performa baik. Pertahankan dukungan akademik yang ada.")
             else:
-                st.info("📌 **Rekomendasi:** Pantau perkembangan mahasiswa ini secara berkala.")
+                st.success("✅ **Rekomendasi:** Mahasiswa ini memiliki performa baik. Pertahankan dukungan akademik yang ada.")
 
 # ── Tab 3 : Analisis Data ─────────────────────────────────────────────────────
 with tabs[2]:

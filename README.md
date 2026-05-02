@@ -2,9 +2,8 @@
 
 ## Business Understanding
 
-Jaya Jaya Institut adalah institusi pendidikan tinggi yang telah berdiri sejak tahun 2000 dan telah mencetak ribuan lulusan berkualitas. Namun, institusi ini kini menghadapi tantangan serius berupa **tingginya angka dropout (putus studi)** yang mencapai lebih dari **32% dari total mahasiswa terdaftar** (1.421 dari 4.424 mahasiswa). Angka ini jauh melampaui rata-rata toleransi industri pendidikan.
+Jaya Jaya Institut adalah institusi pendidikan tinggi yang telah berdiri sejak tahun 2000 dan telah mencetak ribuan lulusan berkualitas. Namun, institusi ini kini menghadapi tantangan serius berupa **tingginya angka dropout (putus studi)** yang menjadi perhatian utama pihak manajemen. Tingginya angka dropout berdampak langsung pada:
 
-Tingginya angka dropout ini berdampak langsung pada:
 - **Reputasi institusi** — akreditasi dan peringkat institusi dipengaruhi tingkat kelulusan
 - **Kerugian finansial** — setiap mahasiswa dropout berarti kehilangan potensi pendapatan jangka panjang
 - **Sumber daya terbuang** — biaya rekrutmen, orientasi, dan administrasi mahasiswa yang tidak selesai
@@ -22,7 +21,7 @@ Jika masalah ini tidak segera ditangani secara sistematis, Jaya Jaya Institut be
 
 ### Cakupan Proyek
 
-Proyek ini mencakup pengolahan data 4.424 mahasiswa Jaya Jaya Institut, Exploratory Data Analysis (EDA) secara ekstensif pada seluruh fitur (Univariate, Multivariate, Numerikal, dan Kategorikal), serta pembuatan model Machine Learning untuk memprediksi status mahasiswa (Graduate/Dropout/Enrolled). Hasil analisis juga diimplementasikan dalam bentuk Dashboard Metabase dan prototype aplikasi prediksi interaktif menggunakan Streamlit.
+Proyek ini mencakup pengolahan data 4.424 mahasiswa Jaya Jaya Institut, Exploratory Data Analysis (EDA) secara ekstensif pada seluruh fitur (Univariate, Multivariate, Numerikal, dan Kategorikal), serta pembuatan model Machine Learning **klasifikasi biner** untuk memprediksi status mahasiswa (Dropout atau Graduate). Data mahasiswa dengan status Enrolled **tidak dilibatkan** dalam proses training model karena belum memiliki label akhir, namun digunakan secara opsional pada tahap inferensi. Hasil analisis juga diimplementasikan dalam bentuk Dashboard Metabase dan prototype aplikasi prediksi interaktif menggunakan Streamlit.
 
 ### Persiapan
 
@@ -56,6 +55,8 @@ Aplikasi akan terbuka di browser pada `http://localhost:8501`.
 
 Dashboard bisnis interaktif telah dibuat menggunakan **Metabase** versi `v0.60.3.3` untuk membantu Jaya Jaya Institut memantau performa dan faktor risiko dropout mahasiswa secara visual.
 
+Berdasarkan data yang ditampilkan di dashboard, diketahui bahwa angka dropout mencapai **lebih dari 32%** dari total mahasiswa yang memiliki status akhir (1.421 Dropout dari 3.630 mahasiswa Dropout + Graduate). Temuan ini menjadi dasar penting dalam merancang strategi intervensi.
+
 **Dashboard menampilkan:**
 - Distribusi status mahasiswa (Dropout, Graduate, Enrolled)
 - Tingkat dropout berdasarkan gender, beasiswa, dan ketepatan pembayaran SPP
@@ -82,7 +83,7 @@ Dashboard bisnis interaktif telah dibuat menggunakan **Metabase** versi `v0.60.3
    - **Email:** `root@mail.com`
    - **Password:** `root123`
 
-> 📸 Screenshot dashboard tersedia di file `Vito_gunawan_dashboard.png` dalam folder proyek sebagai bukti visual pemenuhan kriteria 3.
+> 📸 Screenshot dashboard tersedia di file `Vito_gunawan_dashboard.png` dalam folder proyek sebagai bukti visual.
 
 ---
 
@@ -104,16 +105,20 @@ streamlit run app.py
 
 Aplikasi akan terbuka di `http://localhost:8501` dengan tiga fitur utama:
 - **📊 Dashboard** — Visualisasi distribusi & analisis status mahasiswa
-- **🤖 Prediksi** — Input data mahasiswa → prediksi status + probabilitas per kelas
+- **🤖 Prediksi** — Input data mahasiswa → prediksi status Dropout/Graduate + probabilitas per kelas
 - **📈 Analisis Data** — Eksplorasi interaktif fitur dataset
 
-**Link Prototype Streamlit Cloud:** *(akan ditambahkan setelah deploy)*
+**Link Prototype Streamlit Cloud:** 
+https://projekds-8qxp6srxmnrzmr8tjcz3gs.streamlit.app/
 
 ---
 
 ## Conclusion
 
 Berdasarkan hasil Exploratory Data Analysis (EDA) yang dilakukan pada **seluruh fitur** dataset dan model Machine Learning yang dibangun, ditemukan temuan-temuan penting berikut:
+
+**Temuan dari Data:**
+Dari total 4.424 data mahasiswa, terdapat 1.421 mahasiswa berstatus **Dropout** (39,1% dari total yang memiliki status akhir), 2.209 mahasiswa **Graduate**, dan 794 mahasiswa **Enrolled** (masih aktif). Angka dropout lebih dari 32% ini menunjukkan permasalahan serius yang memerlukan penanganan segera.
 
 **Faktor-Faktor Utama Penyebab Dropout (Berdasarkan Batasan Empiris dari Data):**
 
@@ -123,7 +128,23 @@ Berdasarkan hasil Exploratory Data Analysis (EDA) yang dilakukan pada **seluruh 
 - **Status Beasiswa:** Mahasiswa tanpa beasiswa memiliki risiko dropout 2x lebih tinggi dibandingkan pemegang beasiswa, menunjukkan faktor finansial sebagai penyebab signifikan.
 - **Usia Saat Mendaftar (>25 tahun):** Mahasiswa yang mendaftar di atas usia 25 tahun memiliki tingkat dropout lebih tinggi, kemungkinan karena beban kerja dan tanggung jawab di luar kampus.
 
-**Performa Model:** XGBoost Classifier mencapai akurasi **76.2%** dan F1-Weighted **76.2%**. Performa ini dianggap sangat optimal untuk dataset tabular riil yang memodelkan probabilitas dropout yang sangat dinamis, sehingga model sangat bisa diandalkan secara empiris. Melalui analisis *Feature Importance*, model membuktikan secara kuantitatif bahwa **Jumlah SKS yang diluluskan (Semester 2 & Semester 1), Ketepatan pembayaran SPP (`Tuition_fees_up_to_date`), dan Kepemilikan Beasiswa (`Scholarship_holder`)** adalah 4 fitur terpenting teratas dalam memprediksi status dropout.
+**Performa Model (Binary Classification: Dropout vs Graduate):**
+
+Model dilatih menggunakan **hanya data mahasiswa dengan status akhir** (Dropout dan Graduate = 3.630 data). Data mahasiswa berstatus **Enrolled tidak dilibatkan** dalam proses training karena belum memiliki label akhir. Random Forest Classifier terpilih sebagai model terbaik dengan performa:
+
+| Metrik | Nilai |
+|--------|-------|
+| **Accuracy** | **90.91%** |
+| **F1-Weighted** | **90.80%** |
+| **Precision (Dropout)** | **93%** |
+| **Recall (Dropout)** | **83%** |
+| **Precision (Graduate)** | **90%** |
+| **Recall (Graduate)** | **96%** |
+
+Melalui analisis *Feature Importance*, model membuktikan secara kuantitatif bahwa **Jumlah SKS yang diluluskan (Semester 2 & Semester 1), Ketepatan pembayaran SPP (`Tuition_fees_up_to_date`), dan Kepemilikan Beasiswa (`Scholarship_holder`)** adalah fitur-fitur terpenting dalam memprediksi status dropout.
+
+**Inferensi pada Data Enrolled:**
+Data mahasiswa Enrolled (794 mahasiswa) digunakan secara terpisah untuk prediksi/inferensi. Dari hasil prediksi, 392 mahasiswa (49,4%) diprediksi berisiko dropout dan 402 mahasiswa diprediksi akan graduate.
 
 ### Rekomendasi Action Items
 
