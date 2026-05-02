@@ -123,9 +123,7 @@ Berdasarkan hasil Exploratory Data Analysis (EDA) yang dilakukan pada **seluruh 
 - **Status Beasiswa:** Mahasiswa tanpa beasiswa memiliki risiko dropout 2x lebih tinggi dibandingkan pemegang beasiswa, menunjukkan faktor finansial sebagai penyebab signifikan.
 - **Usia Saat Mendaftar (>25 tahun):** Mahasiswa yang mendaftar di atas usia 25 tahun memiliki tingkat dropout lebih tinggi, kemungkinan karena beban kerja dan tanggung jawab di luar kampus.
 
-**Performa Model Kuantitatif:**
-
-Model terbaik (Random Forest Classifier dengan SMOTE balancing) berhasil mencapai **akurasi 75.7%** dan **F1-Score weighted 76%** pada data uji. Model mampu mendeteksi kasus dropout dengan precision 84%, artinya 84 dari 100 prediksi dropout adalah benar. Melalui analisis Feature Importance, model membuktikan secara kuantitatif bahwa **nilai semester 2, jumlah SKS lulus semester 2, nilai semester 1, dan jumlah SKS lulus semester 1** adalah empat fitur terpenting dalam prediksi dropout.
+**Performa Model:** XGBoost Classifier mencapai akurasi **76.2%** dan F1-Weighted **76.2%**. Performa ini dianggap sangat optimal untuk dataset tabular riil yang memodelkan probabilitas dropout yang sangat dinamis, sehingga model sangat bisa diandalkan secara empiris. Melalui analisis *Feature Importance*, model membuktikan secara kuantitatif bahwa **Jumlah SKS yang diluluskan (Semester 2 & Semester 1), Ketepatan pembayaran SPP (`Tuition_fees_up_to_date`), dan Kepemilikan Beasiswa (`Scholarship_holder`)** adalah 4 fitur terpenting teratas dalam memprediksi status dropout.
 
 ### Rekomendasi Action Items
 
