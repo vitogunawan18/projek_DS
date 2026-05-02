@@ -1,0 +1,242 @@
+﻿Total pages: 8
+=== PAGE 1 ===
+Catatan dari Reviewer  
+Halo,  vito_gunawan ! 
+Terimakasih telah mengirimkan tugas  Submission Pertama: Menyelesaikan Permasalahan 
+Human Resources . Setelah kami bedah dan telisik secara komprehensif, ternyata ada kriteria 
+wajib yang masih belum Anda penuhi.   
+Berikut beberapa catatan dari kami untuk memperbaiki proyek Anda.  
+ 
+Kriteria 2: Menggunakan Templat Proyek yang Telah Disediakan  
+ΓÇó Sesuai dengan  Ketentuan Submission  kriteria no. 1, kamu  harus 
+menggunakan  template README.md yang sudah disediakan oleh Dicoding. Template 
+yang dimaksud dapat diakses pada tautan berikut:   
+o Template README.md:  Template README Proyek Pertama . 
+ 
+ΓÇó Tidak diperkenankan  mengubah/menghapus struktur utama (heading utama) pada 
+template.  Kamu tetap diperbolehkan menambahkan sub domain selama  domain 
+utama  masih ada pada laporan.  
+ΓÇó Kerjakan seluruh proses dalam proyek data science sesuai dengan template dan 
+seperti yang sudah kamu pelajari pada kelas ini.  
+ΓÇó Kriteria lainnya belum dapat diperiksa karena struktur dan isi laporan menjadi acuan 
+utama dalam proses review.  
+Berkas Notebook.ipynb  
+ΓÇó Eksplorasi yang kamu lakukan masih terbatas. Lakukan lebih banyak ekplorasi data 
+(EDA) yang merupakan tahap mengeksplorasi data guna mendapatkan insight atau 
+informasi data seperti  distribusi data, tren data, korelasi data dan sebagainya. Ada 
+beberapa jenis EDA yang bisa kamu lakukan seperti:  
+o EDA Univariate  
+o EDA Multivariate  
+o EDA Numerikal  
+o EDA Kategorikal  
+o dsb 
+ΓÇó Referensi:  
+o Exploratory Data Analysis  
+
+=== PAGE 2 ===
+o Tahapan dalam Proyek Data Science  
+o Latihan Exploratory Data Analysis  (Kelas Belajar Fundamental Analisis Data)  
+o Pengenalan Exploratory Data Analysis  (Kelas Belajar Fundamental Analisis 
+Data)  
+Notebook  
+ΓÇó Section  Business Understanding  
+o Berikan penjelasan latar belakang bisnis dari perusahaan terkait isu attrition 
+secara lebih komprehensif. Jelaskan mengapa attrition menjadi masalah 
+penting bagi perusahaan, dampaknya terhadap operasional dan 
+produktivitas, serta urgensi. Tambahkan konteks  spesifik seperti tingkat 
+attrition yang tinggi, tantangan yang dihadapi tim HR, dan bagaimana proyek 
+ini dapat membantu pengambilan keputusan yang lebih baik.  
+ΓÇó Section Permasalahan bisnis yang kamu perlu diperbaiki  
+o Fokuskan bagian permasalahan business ini untuk menjelaskan/menjabarkan 
+apa permasalahan bisnis yang sedang dihadapi oleh institusi ya. Sebaiknya 
+ganti dari pertanyaan menjadi pernyataan dan perlihatkan urgensi 
+permasalahan yang dihadapi sehingga permasala han menjadi terlihat penting 
+dan memang urgent untuk segera diselesaikan. Kamu dapat menyertakan 
+analisis lebih lanjut/lebih detail mengenai permasalahan yang dihadapi, 
+misalnya apa urgensi permasalahan atau efek bisnis/resiko jangka panjang 
+yang mungkin a kan dihadapi jika permasalahan terus berlanjut.  
+Kriteria 4: Membuat Minimal Satu Business Dashboard  
+ΓÇó Pada bagian ini sertakan petunjuk yang lengkap dan terstruktur mengenai cara 
+menjalankan dashboard Metabase. Hal yang perlu diperhatikan mencakup:  
+o Sertakan versi Metabase yang digunakan agar tidak terjadi ketidaksesuaian 
+environment saat dijalankan.  
+o Command untuk melakukan copy file  metabase.db.mv.db  yang dilampirkan 
+ke dalam container Docker, serta langkah menjalankan container hingga 
+dashboard dapat diakses melalui  localhost:3000 . 
+ΓÇó Section  Conclusion:  
+o Dikarenakan pada submission ini cakupan proyek menggunakan model 
+machine learning. Maka pada bagian  conclusion  memuat dua jenis 
+kesimpulan.  
+
+=== PAGE 3 ===
+Γû¬ Kesimpulan pertama menjelaskan faktor -faktor dan karakteristik yang 
+berkaitan dengan terjadinya attrition berdasarkan hasil analisis data 
+yang telah dilakukan pada notebook dan dashboard.  
+Γû¬ Kesimpulan kedua menjelaskan performa model secara kuantitatif 
+(accuracy, precision, recall, atau F1 -score) yang digunakan serta fitur -
+fitur penting yang paling berpengaruh terhadap model jika 
+menampilkan feature importance.  
+ΓÇó  
+Kriteria 1 : Menggunakan Templat Proyek yang Telah Disediakan  
+o Sumber Dataset  
+Tuliskan  tautan  sumber dataset yang kamu gunakan pada project ini. Tautan 
+yang langsung mengarah kepada sumber data, baik itu dari kaggle, github 
+atau lainnya. Hal ini penting untuk dilakukan agar orang lain dapat 
+memverifikasi data yang kamu gunakan, memahami konteksnya,  serta 
+memastikan bahwa data tersebut legal, valid, dan dapat digunakan kembali 
+sesuai dengan lisensinya. Selain itu, mencantumkan sumber juga merupakan 
+bagian dari etika dalam penggunaan data dan menjaga transparansi dalam 
+proses analisis.  
+ 
+o Setup environment  
+Pada bagian  Setup environment , pastikan kamu menyampaikan instruksi 
+yang lengkap dan sistematis agar proyek dapat dijalankan oleh orang lain 
+tanpa hambatan. Saat ini instruksi yang kamu berikan belum lengkap, silahkan 
+tambahkan instruksi berikut:.  
+Γû¬ Membuat dan Mengaktifkan Virtual Environment Instruksi tentang 
+cara membuat dan mengaktifkan virtual environment perlu dijelaskan, 
+agar lingkungan pengembangan tetap terisolasi dan stabil.contoh:  
+Γû¬ Setup Environment - Anaconda  
+Γû¬ conda create --name main -ds python=3.9conda activate main -
+ds 
+1. conda create -name mainds python=3.9  
+2. conda activate mainds  
+ 
+Γû¬ Setup Environment - Shell/Terminal  
+Γû¬ pip install pipenvpipenv installpipenv shell  
+
+=== PAGE 4 ===
+1. pip install pipenv  
+2. pipenv install  
+3. pipenv shell  
+ 
+Γû¬ Menginstal Dependensi dari requirements.txt  Kamu telah menuliskan 
+cara menginstal dependensi, namun sebaiknya proses instalasi 
+dilakukan melalui file  requirements.txt  agar lebih praktis dan 
+konsistencontoh  
+ 
+Γû¬ Cara Menjalankan Skrip Python (.py) ==> (jika menerapkan kriteria 
+saran)  
+Harus dijelaskan file utama yang dijalankan, termasuk perintah 
+lengkap untuk mengeksekusinya di terminal atau command prompt. 
+Jika ada parameter tambahan, berikan contoh penggunaannya.  
+Γû¬ Dan lain -lain 
+o Kesimpulan.  
+Γû¬ Lakukan kembali analisis dengan benar ( silahkan lihat saran 
+perbaikan untuk kriteria 2 ), lalu perbaiki kembali kesimpulan 
+berdasarkan data sesuai dengan hasil analisis terakhir yang kamu 
+lakukan.  
+Γû¬ Tuliskan batas yang jelas untuk setiap kesimpulan yang kamu buat. 
+Untuk usia kamu sudah menuliskan batas yang jelas meskipun ini 
+masih perkiraan yaitu umur 35. Tuliskan juga batasan mengenai gaji 
+dan total lama bekerja yang merupakan kriteria yang menunjuk kan 
+kecenderungan attrition karyawan. Jika ada faktor lainnya setelah 
+perbaikan analisis, maka tuliskan juga batasannya pada kesimpulan 
+ya.   
+ 
+ΓÇó Kriteria 2 : Menjalankan Seluruh Proses dalam Proyek Data Science  
+o Kamu masih perlu melakukan lebih banyak EDA  untuk mendapatkan lebih 
+banyak insight mengenai data. Saat ini kamu hanya melakukan EDA pada 
+
+
+=== PAGE 5 ===
+beberapa faktor saja, dan dasar kamu  hanya  melakukan EDA pada faktor 
+tersebut juga tidak kuat/tidak berdasarkan data. Seperti misalnya bagaimana 
+kamu kamu memutuskan dan menyatakan ada beberapa fitur saja yang 
+relevan, padahal kamu belum melakukan analisis pada setiap fitur atau belum 
+menjelaskan alasan yang kuat kenapa ia tidak dianalisis ? Bukankah bisa jadi 
+fitur yang tidak kamu analisis malah lebih relevan dan lebih signifikan 
+pengaruhnya terhadap attrition? Bukankah seharusnya kamu menyatakan 
+relevan atau tidak, signifikan atau tidak setelah m elakukan analisis? bukan 
+sebaliknya ?  
+ 
+Pada Data Science memahami setiap data sangat penting dan menjadi kunci 
+dari penyelesaian masalah, Pastikan setiap tindakan yang kamu lakukan selalu 
+berdasarkan keputusan yang diambil dari hasil analisis data juga. EDA 
+merupakan tahap mengeksplorasi data g una mendapatkan insight atau 
+informasi data seperti  distribusi data, tren data, korelasi data dan 
+sebagainya.  Oleh karena itu lakukan analisis terlebih dahulu kepada setiap 
+fitur yang ada . Ada beberapa jenis EDA yang bisa kamu lakukan seperti:  
+Γû¬ EDA Univariate  
+Γû¬ EDA Multivariate  
+Γû¬ EDA Numerikal  
+Γû¬ EDA Kategorikal  
+Γû¬ dsb 
+ 
+ΓÇó Kriteria 3 : Membuat Minimal Satu Business Dashboard  
+o Kamu belum memenuhi kriteria pengiriman submission. Silahkan dipenuhi 
+dahulu ya dan pastikan kamu mengirimkan file gambar screenshot dengan 
+benar sehingga bisa divalidasi apakah kamu mengirimkan gambar yang benar 
+sesuai dengan dashboard yang dibuat.  
+ 
+Additional Review :  
+ 
+ΓÇó Rekomendasi Action Items (kriteria opsional)  Usulan yang diberikan masih  belum 
+memenuhi kriteria karena bersifat umum dan belum secara jelas didasarkan pada 
+hasil analisis data yang spesifik.  Rekomendasi seperti  Pengelolaan Beban 
+Lembur,  Penyesuaian Kompensasi dan Jenjang Karir Gaji Dasar  serta  Program 
+Mentorship Karyawan Muda  masih disampaikan tanpa mengaitkannya dengan 
+temuan konkret (misalnya fitur paling berpengaruh atau hasil segmentasi risiko). 
+
+=== PAGE 6 ===
+Selain itu, belum terdapat penjelasan mengenai  bagaimana rekomendasi tersebut 
+akan diimplementasikan secara praktis  maupun prioritas berdasarkan tingkat 
+dampaknya.  
+Untuk perbaikan, setiap rekomendasi perlu dihubungkan langsung dengan insight 
+dari analisis, dilengkapi dengan alasan yang berbasis data, serta diberikan gambaran 
+implementasi yang lebih jelas agar lebih aplikatif dan sesuai dengan kriteria. Contoh:  
+o Berdasarkan hasil analisis, karyawan dengan gaji bulanan xxx dengan jabatan 
+xxx memiliki probabilitas attrition tertinggi (>70%).  Oleh karena itu, 
+perusahaan dapat melakukan penyesuaian gaji secara terarah (misalnya 
+kenaikan 10 ΓÇô15%) untuk kelompok ini, me mberikan retention bonus sebesar 
+1ΓÇô2 bulan gaji yang dibayarkan setelah 6 ΓÇô12 bulan, serta mempercepat siklus 
+evaluasi gaji menjadi setiap 6 bulan guna menekan risiko attrition pada 
+periode kritis  
+Silakan perbaiki terlebih dahulu proyek Anda dengan mengikuti catatan di atas untuk bisa 
+lulus dari tugas submission ini. Tetap semangat! Jangan lupa untuk segera submit kembali, 
+ya. Kami tunggu.  
+Jika Ada pertanyaan, silakan tanyakan pada forum  academy discussion . Dengan senang hati 
+kami akan membantu Anda.  
+Catatan dari Reviewer  
+Halo,  vito_gunawan ! 
+Terimakasih telah mengirimkan tugas  Submission Pertama: Menyelesaikan Permasalahan 
+Human Resources . Setelah kami bedah dan telisik secara komprehensif, ternyata ada kriteria 
+wajib yang masih belum Anda penuhi.   
+Berikut beberapa catatan dari kami untuk memperbaiki proyek Anda.  
+ 
+Kriteria 4: Membuat Minimal Satu Business Dashboard  
+ΓÇó Sesuai dengan instruksi yang dilampirkan, dashboard metabase belum dapat diakses 
+karena container mengalami interupsi saat dijalankan.  
+
+=== PAGE 7 ===
+ 
+Hal ini dapat disebabkan oleh ketidaksesuaian versi Metabase yang digunakan. 
+Sebagai saran, gunakan versi Metabase yang sesuai dengan lingkungan eksekusi, 
+serta uji kembali container secara lokal untuk memastikan dashboard dapat berjalan 
+dan diakses tanpa kendala sebelum dikumpulkan  
+ΓÇó Untuk melihat versi yang digunakan, kamu dapat melihatnya pada dashboard 
+metabase atau dashboard docker container.  
+ 
+ΓÇó Dashboard yang dibuat seharusnya menyajikan kumpulan visualisasi yang informatif 
+dan relevan untuk mendukung proses analisis serta pengambilan kesimpulan yang 
+akan dituangkan dalam berkas laporan. Perlu ditekankan bahwa dashboard bukanlah 
+
+
+=== PAGE 8 ===
+tempat untuk menampilkan  table,  dataframe, atau satuan visualisasi  saja. Fokuskan 
+pada penggunaan elemen visual seperti bar chart, line chart, pie chart, heatmap, 
+atau visualisasi interaktif lainnya yang mampu memberikan insight secara lebih jelas 
+dan mudah dipahami oleh pengguna. Kamu dapat mengunjungi kembali 
+module  Membuat Business Dashboard  sebagai referensi untuk membuat dashboard 
+yang baik dan bagus.  
+ΓÇó Kamu dapat mengunjungi kembali module  Membuat Business Dashboard  sebagai 
+referensi untuk membuat dashboard yang baik dan bagus. Referensi lain:  
+o Data Visualization: An Interactive Attrition Dashboard in Power BI  
+o HR Attrition Dashboard  
+Silakan perbaiki terlebih dahulu proyek Anda dengan mengikuti catatan di atas untuk bisa 
+lulus dari tugas submission ini. Tetap semangat! Jangan lupa untuk segera submit kembali, 
+ya. Kami tunggu.  
+Jika Ada pertanyaan, silakan tanyakan pada forum  academy discussion . Dengan senang hati 
+kami akan membantu Anda.  
+ 
+
